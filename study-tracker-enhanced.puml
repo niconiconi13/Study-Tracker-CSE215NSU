@@ -1,0 +1,187 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "com.studytracker.model" {
+  interface Trackable {
+    +String getSummary()
+    +double calculateScore()
+  }
+
+  abstract class TrackerItem {
+    -String name
+    -String createdDate
+    +TrackerItem()
+    +TrackerItem(String, String)
+    +String getName()
+    +void setName(String)
+    +String getCreatedDate()
+    +void setCreatedDate(String)
+    +String describe()
+    +String describe(String)
+    +abstract String getSummary()
+    +abstract double calculateScore()
+  }
+
+  class Subject {
+    -int weeklyGoalHours
+    +Subject()
+    +Subject(String)
+    +Subject(String, int)
+    +int getWeeklyGoalHours()
+    +void setWeeklyGoalHours(int)
+    +double calculateScore()
+    +String getSummary()
+    +String toString()
+  }
+
+  class StudySession {
+    -String subject
+    -long durationSeconds
+    -String timestamp
+    +StudySession()
+    +StudySession(String, long, LocalDateTime)
+    +String getSubject()
+    +void setSubject(String)
+    +long getDurationSeconds()
+    +void setDurationSeconds(long)
+    +String getTimestamp()
+    +void setTimestamp(String)
+    +double calculateScore()
+    +String getSummary()
+    +String getFormattedDuration()
+    +String getDateOnly()
+    +LocalDateTime getParsedTimestamp()
+  }
+
+  class StudyGoal {
+    -String subjectName
+    -double targetHours
+    -double completedHours
+    +StudyGoal()
+    +StudyGoal(String, double)
+    +String getSubjectName()
+    +void setSubjectName(String)
+    +double getTargetHours()
+    +void setTargetHours(double)
+    +double getCompletedHours()
+    +void setCompletedHours(double)
+    +double calculateScore()
+    +String getSummary()
+  }
+
+  class InvalidStudyDataException {
+    +InvalidStudyDataException(String)
+    +InvalidStudyDataException(String, Throwable)
+  }
+
+  class AppData {
+    -List<Subject> subjects
+    -List<StudySession> sessions
+    -List<StudyGoal> goals
+    +List<Subject> getSubjects()
+    +void setSubjects(List<Subject>)
+    +List<StudySession> getSessions()
+    +void setSessions(List<StudySession>)
+    +List<StudyGoal> getGoals()
+    +void setGoals(List<StudyGoal>)
+  }
+}
+
+package "com.studytracker.controller" {
+  class DataController {
+    -static final String DATA_FILE
+    -static DataController instance
+    -AppData appData
+    -DataController()
+    +static DataController getInstance()
+    +List<Subject> getSubjects()
+    +void addSubject(String) throws InvalidStudyDataException
+    +void removeSubject(Subject)
+    +List<StudySession> getSessions()
+    +void addSession(StudySession) throws InvalidStudyDataException
+    +long getTotalStudySeconds()
+    +int getTotalSessionCount()
+    +double getTotalXP()
+    +int getCurrentStreak()
+    +Map<String, Long> getTimePerSubject()
+    +List<StudyGoal> getGoals()
+    +void addGoal(StudyGoal) throws InvalidStudyDataException
+    +void removeGoal(StudyGoal)
+    +void updateGoalProgress(StudyGoal)
+    -AppData loadData()
+    +void saveData()
+  }
+}
+
+package "com.studytracker.main" {
+  class Main {
+    -Stage primaryStage
+    -Scene mainScene
+    -StackPane root
+    +void start(Stage)
+    -void navigateTo(String)
+    +static void main(String[])
+  }
+}
+
+package "com.studytracker.screens" {
+  class HomeScreen
+  class TimerScreen
+  class SubjectsScreen
+  class GoalsScreen
+  class SessionsScreen
+  class DashboardScreen
+}
+
+package "com.studytracker.ui" {
+  class QuoteCard
+  class StudyTipWidget
+}
+
+package "com.studytracker.service" {
+  class DailyQuoteService {
+    +String[] fetchQuote()
+  }
+}
+
+Trackable <|.. TrackerItem
+TrackerItem <|-- Subject
+TrackerItem <|-- StudySession
+TrackerItem <|-- StudyGoal
+InvalidStudyDataException --|> Exception
+AppData "1" o-- "*" Subject
+AppData "1" o-- "*" StudySession
+AppData "1" o-- "*" StudyGoal
+DataController "1" o-- "1" AppData
+DataController --> Subject : manages
+DataController --> StudySession : manages
+DataController --> StudyGoal : manages
+DataController --> InvalidStudyDataException : validates
+Main --> HomeScreen
+Main --> TimerScreen
+Main --> SubjectsScreen
+Main --> GoalsScreen
+Main --> SessionsScreen
+Main --> DashboardScreen
+HomeScreen --> DataController
+HomeScreen --> QuoteCard
+HomeScreen --> StudyTipWidget
+TimerScreen --> DataController
+TimerScreen --> Subject
+TimerScreen --> StudySession
+TimerScreen --> InvalidStudyDataException
+SubjectsScreen --> DataController
+SubjectsScreen --> Subject
+SubjectsScreen --> InvalidStudyDataException
+GoalsScreen --> DataController
+GoalsScreen --> StudyGoal
+GoalsScreen --> Subject
+GoalsScreen --> InvalidStudyDataException
+GoalsScreen --> TrackerItem : polymorphism
+SessionsScreen --> DataController
+SessionsScreen --> StudySession
+DashboardScreen --> DataController
+QuoteCard --> DailyQuoteService
+StudyTipWidget ..> List
+
+@enduml

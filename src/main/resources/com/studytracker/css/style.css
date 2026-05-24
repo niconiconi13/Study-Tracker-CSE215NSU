@@ -1,0 +1,480 @@
+/* ============================================================
+   Study Time Tracker – Dark Theme Stylesheet
+   ============================================================ */
+
+/* ── Root / Screen base ─────────────────────────────────── */
+.root {
+    -fx-background-color: #1caadd;
+    -fx-font-family: "Segoe UI", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+
+.screen {
+    -fx-background-color: #1a78b7;
+}
+
+.home-screen {
+    -fx-background-color: #26b3d6;
+}
+
+/* ── Home title & subtitle ──────────────────────────────── */
+.home-title {
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #13171c;
+    -fx-effect: dropshadow(gaussian, rgba(124, 218, 207, 0.5), 20, 0.3, 0, 0);
+}
+
+.home-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-style: italic;
+}
+
+.streak-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #131009;
+    -fx-background-color: rgba(231, 98, 10, 0.811);
+    -fx-padding: 8 20 8 20;
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(3, 2, 1, 0.25);
+    -fx-border-radius: 1;
+    -fx-border-width: 1;
+}
+
+/* ── Navigation Cards ────────────────────────────────────── */
+.nav-card {
+    -fx-background-color: #f9530b;
+    -fx-background-radius: 16;
+    -fx-border-color: #ff1b07;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+.nav-card-hover {
+    -fx-background-color: #243347;
+    -fx-border-color: #6366f1;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.35), 24, 0.4, 0, 4);
+}
+
+.card-icon {
+    -fx-font-size: 38px;
+}
+
+.card-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f5f9;
+}
+
+.card-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #f2f5fa;
+}
+
+/* ── Screen title ────────────────────────────────────────── */
+.screen-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f5f9;
+}
+
+/* ── Content card (panels inside screens) ─────────────────── */
+.content-card {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 16;
+    -fx-border-color: #334155;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 16, 0.3, 0, 4);
+}
+
+/* ── Timer display ───────────────────────────────────────── */
+.timer-display {
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-family: "Courier New", "Lucida Console", monospace;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.4), 12, 0.3, 0, 0);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.back-btn {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+.back-btn:hover {
+    -fx-background-color: #243347;
+    -fx-text-fill: #e2e8f0;
+    -fx-border-color: #6366f1;
+}
+
+.timer-btn {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24 10 24;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+}
+
+.action-btn {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18 8 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+}
+
+.btn-start {
+    -fx-background-color: #6366f1;
+}
+
+.btn-start:hover {
+    -fx-background-color: #818cf8;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.5), 12, 0.4, 0, 2);
+}
+
+.btn-start:disabled {
+    -fx-background-color: #334155;
+    -fx-text-fill: #64748b;
+    -fx-opacity: 0.6;
+}
+
+.btn-pause {
+    -fx-background-color: #f59e0b;
+}
+
+.btn-pause:hover {
+    -fx-background-color: #fbbf24;
+    -fx-effect: dropshadow(gaussian, rgba(245,158,11,0.5), 12, 0.4, 0, 2);
+}
+
+.btn-pause:disabled {
+    -fx-background-color: #334155;
+    -fx-text-fill: #64748b;
+    -fx-opacity: 0.6;
+}
+
+.btn-stop {
+    -fx-background-color: #ef4444;
+}
+
+.btn-stop:hover {
+    -fx-background-color: #f87171;
+    -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.5), 12, 0.4, 0, 2);
+}
+
+.btn-stop:disabled {
+    -fx-background-color: #334155;
+    -fx-text-fill: #64748b;
+    -fx-opacity: 0.6;
+}
+
+.delete-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-color: #ef4444;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 2 8 2 8;
+    -fx-background-radius: 6;
+}
+
+.delete-btn:hover {
+    -fx-background-color: rgba(239,68,68,0.15);
+}
+
+/* ── Fields ──────────────────────────────────────────────── */
+.dark-field {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #e2e8f0;
+    -fx-prompt-text-fill: #475569;
+    -fx-background-radius: 8;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+}
+
+.dark-field:focused {
+    -fx-border-color: #6366f1;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.3), 8, 0.3, 0, 0);
+}
+
+/* ── ComboBox ─────────────────────────────────────────────── */
+.combo-box-dark {
+    -fx-background-color: #0f172a;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-background-radius: 8;
+}
+
+.combo-box-dark .list-cell {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12 6 12;
+}
+
+.combo-box-dark .cell:selected {
+    -fx-background-color: #6366f1;
+}
+
+.combo-box-dark .arrow-button {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+    -fx-border-width: 0 0 0 1;
+    -fx-background-radius: 0 8 8 0;
+}
+
+.combo-box-dark .arrow {
+    -fx-background-color: #94a3b8;
+}
+
+/* ── ListView ─────────────────────────────────────────────── */
+.dark-list {
+    -fx-background-color: #0f172a;
+    -fx-border-color: #334155;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+}
+
+.dark-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+    -fx-padding: 4 8 4 8;
+}
+
+.dark-list .list-cell:filled:hover {
+    -fx-background-color: rgba(99,102,241,0.08);
+}
+
+.dark-list .list-cell:filled:selected {
+    -fx-background-color: rgba(99,102,241,0.2);
+    -fx-border-color: transparent;
+}
+
+.dark-list > .virtual-flow > .clipped-container > .sheet > .list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+/* ── TableView ───────────────────────────────────────────── */
+.dark-table {
+    -fx-background-color: #0f172a;
+    -fx-border-color: #334155;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+}
+
+.dark-table .column-header-background {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.dark-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.dark-table .column-header .label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 8;
+}
+
+.dark-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #1e293b;
+}
+
+.dark-table .table-row-cell:odd {
+    -fx-background-color: rgba(30,41,59,0.4);
+}
+
+.dark-table .table-row-cell:hover {
+    -fx-background-color: rgba(99,102,241,0.1);
+}
+
+.dark-table .table-row-cell:selected {
+    -fx-background-color: rgba(99,102,241,0.25);
+}
+
+.dark-table .table-cell {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-padding: 8 8 8 12;
+    -fx-border-color: transparent;
+    -fx-alignment: center-left;
+}
+
+.dark-table .placeholder .label {
+    -fx-text-fill: #475569;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #0f172a;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #334155;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #475569;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #475569;
+    -fx-shape: "";
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+/* ── Dashboard stats ─────────────────────────────────────── */
+.stat-card {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 14;
+    -fx-border-color: #334155;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0.2, 0, 2);
+}
+
+.stat-icon {
+    -fx-font-size: 28px;
+}
+
+.stat-value {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f5f9;
+}
+
+.stat-name {
+    -fx-font-size: 11px;
+    -fx-text-fill: #64748b;
+    -fx-text-alignment: center;
+}
+
+/* ── Labels ──────────────────────────────────────────────── */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}
+
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4ade80;
+}
+
+.section-heading {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cbd5e1;
+}
+
+.summary-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.list-item-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e2e8f0;
+}
+
+/* ── Daily Quote Card ────────────────────────────────────── */
+.quote-card {
+    -fx-background-color: linear-gradient(to bottom right, #1e293b, #0f1f35);
+    -fx-background-radius: 14;
+    -fx-border-color: #334155;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.15), 14, 0.2, 0, 2);
+}
+
+.quote-icon {
+    -fx-font-size: 22px;
+}
+
+.quote-text {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-text-fill: #cbd5e1;
+    -fx-text-alignment: center;
+}
+
+.quote-author {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6366f1;
+    -fx-font-weight: bold;
+}
+
+/* ── Study Tip Widget ────────────────────────────────────── */
+.tip-widget {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 12;
+    -fx-border-color: #22d3ee44;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+}
+
+.tip-header {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #22d3ee;
+    -fx-text-transform: uppercase;
+}
+
+.tip-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}
+
+.tip-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #22d3ee;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 2 6 2 6;
+    -fx-border-color: #22d3ee55;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.tip-btn:hover {
+    -fx-background-color: rgba(34,211,238,0.1);
+}

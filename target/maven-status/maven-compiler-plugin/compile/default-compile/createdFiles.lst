@@ -1,0 +1,17 @@
+com\studytracker\screens\SessionsScreen.class
+com\studytracker\model\AppData.class
+com\studytracker\screens\DashboardScreen.class
+com\studytracker\model\InvalidStudyDataException.class
+com\studytracker\ui\QuoteCard.class
+com\studytracker\model\Trackable.class
+com\studytracker\controller\DataController.class
+com\studytracker\main\Main.class
+com\studytracker\screens\SubjectsScreen$1.class
+com\studytracker\service\DailyQuoteService.class
+com\studytracker\screens\SubjectsScreen.class
+com\studytracker\ui\StudyTipWidget.class
+com\studytracker\screens\HomeScreen.class
+com\studytracker\model\TrackerItem.class
+com\studytracker\model\Subject.class
+com\studytracker\screens\TimerScreen.class
+com\studytracker\model\StudySession.class
